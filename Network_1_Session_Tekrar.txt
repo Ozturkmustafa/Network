@@ -1,0 +1,701 @@
+# Network nedir? 
+## en az iki pc nin birbirine bilgi paylasimi amaci ile baglanmasidir
+
+## en az iki ama üst sinir yoktur
+
+## bilgi paylasim maksadi olmasi sarttir
+
+## mesela telefon sarj etme pc de, network degildir
+
+
+## Network ler su sekilde hizmetler sunar:
+
+## Access to shared files/ folders
+
+### Access to printers/scanners
+
+## Email Apps
+
+## Database Apps
+
+## Web Apps
+
+## Voice over IP(yani internet üzerinden tel görüsmesi)
+
+## Multimedia conferencing (Zoom gibi)
+
+
+
+#### Network un sahip olmasi gereken özellikler
+
+1-  Performence (Bu response time ile ölcülür)
+# sordugumuz soru ile gelen cevap arasinda gecen süre
+## genelde milisaniye olarak gecer
+## ne kadar düsük ag performansi o kadar yüksek
+## Internet hizi ile dogru orantili ama ayni sey degil.
+## internetimizin hizi bizim internete cikis hizimizi belirler. Ama 
+## internette sörf hizimizi router lar belirler 
+
+2- Data sharing (zaten networkun amaci bilgi paylasimi)
+## veri paylasimi olmazsa, network den bahsedilemez
+
+3- Backup (server cökme durumunda veri kaybolmamasi icin backup alinir)  
+4- Reliability (No failures)
+5- Security (Keep data safe)
+6- Scalability (new systems can be added)
+## aga istedigimiz zaman yeni bir cihaz eklemek
+## genisletilebilirlik, ölceklenebilirlik
+7- Software and hardware compatibility
+## yazilim ve donanim uyumlulugu
+## herkes kendi yazilim ve donanimi ile aga ulasabilir
+## ayni donanim ve yazilimi kullanma zorunlulugu yoktur
+
+
+## Su an web 2.0 kullaniliyor. web 1.0 dan farki nedir?
+## eskiden sadece veriye erisebiliyorduk. simdi ise veriyi 
+## düzenleyip erisebiliyoruz, kendimiz veri olusturabiliyoruz
+## ve web üzerindeki uygulamalar ile etkilesime girebiliyoruz
+## yani daha interaktif
+##eski sistem tamamen statikdi
+
+
+## su an web 2.0 centralized dir. yani server lar büyük devletlerin 
+## kontrolü altindadir. ve ABD Cin ve Rusya Avrupa tarafindadir
+
+## Web 3.0 ile, artik kontrol bu devletlerin elinden cikacak ve 
+## merkezi olmayan bir hal alacaktir
+
+## block chain teknolojisi ile yapilabilecektir bu 
+
+## Bloch chein in en önemli özelligi interneti centralized yapidan kurtarmasidir
+
+## mesela twitter merkezi yapidadir
+## serverlar abd de. istedikleri zamamn erisim engellnebilir
+## block chain de ise bunu engellemek imkansiza yakindir
+
+
+## block chain de whatsapp gibi app lerde verilerimi elde etmeleri
+## neredeyse imkansiz hale gelecektir
+
+## bu sistemde de serverler olacak ama milyonlarca server olacaktir
+
+## mesela su an bizim email gecmislerimiz google in serverlarinda tutulur ve 
+## bunlarin nerede oldugu belirlidir. block chain de ise belirli degildir
+## cünkü bir email binlerce server da dagitik sekilde durur
+## bunun takibini yapmak cok zordur
+
+## evimizde kullandigimiz modem dedigimiz cihazin esas adi 
+## wifi router demektir
+
+## LAN: Local area network:
+
+## günümüzde lan icin bir sinirlama yoktur.
+## bir ülke bir kita bile lan olarak kurulabilir
+
+## mesela bir sehri tek bir lan yapmaktansa, bunu parca parca lan lara
+## ayirmak, yönetimi kolaylastiracaktir.
+
+## Eger bir agda cihazlar dogrudan internete ulasamiyor ise
+# bu aga lan denir. Tüm cihazlar biribirine baglidir ancak hepsi de 
+# internete wifi router vasitasi ile ulasir. yani ag icerisinde
+## router a kadar olan kisim lan olarak adlandirilir. router dan sonra ise 
+## internet basladigindan burasi lan a ait degildir.
+
+## ayrica internet te hicbir sey lan daki cihazlara direkt erisim saglayamaz.
+## tüm trafik router üzerindendir
+
+## router trafigi hangi cihaza yönlendirecegini kendisi belirler 
+## verinin hangi rotayi kullanacagina karar verir 
+
+## router rotalayici anlamina gelmektedir
+
+## mesela evdeki tablet, laptop, desktop, akilli telefon 
+## bunlar lan dir. router üzerinden internete cikis yapar 
+
+## mesela bir sirkete ait 3 departmanin kendilerine ait birer lan lari mevcuttur
+## birde bu 3 lan in birlesiminden olusan 3 gruplu lan mevcuttur 
+## bunlarin hicbiri kendi basina internete baglanamadigi icin 
+## bunlarin tamamina lan denilir
+
+# internete cikis yapilan noktada lan biter wan baslar
+
+## Internete cikacak tüm cihazlarin mutlaka bir IP adresi olamsi gerekir.
+## ve su an dünyada tüm cihazlara verecek kadar ip adresi yoktur.
+# bu nedenle de lan kullanimi yayginlasmistir
+
+
+
+### Network'un elemanlari:
+
+## Node:  aga baglanan herhangi bir cihazdir
+## pc yada herhangi bir cihaz olabilir 
+## kablo ile baglanan cihazdir 
+
+
+## Station: Bu da wireless olarak kablosuz ile aga baglanan 
+## herhangi bir cihazdir 
+
+
+## Host : bu da bir node dur ancak gelistirilmistir.
+## sadece aga baglanmakla yetmez, bir ip adresi alirlar
+## iki cesittir, bir kullanici (client) yada server olarak isimlendirilir
+
+## Workstation: cok güclü bir pc dir 
+## apple'in ürettigi 50.000 $ lik pc lerdir
+## cok fazla islemcisi vardir
+## Bunlar cok pahali oldugu icin üniversite yada sirketlerde bir tane 
+## bulunur birkac kisi kullanir daha sonra diger kisiler kullanir 
+
+## yüksek hesaplama gerektiren islemler icin kullanilir 
+
+## günümüzde bulut hizmeti oldugu icin kullanimi azalmistir
+
+## Ekran kartinin en büyük özelligi yüksek seviyede matematiksel
+## islemler yapabilmesidir. Ancak bir isletim sistemini ekran karti ile 
+# calistiramayiz. bir cpu ile her islem yapilabilir ama ekran karti
+## oyunlar icin ve yüksek islemler icin tasarlanmistir
+
+## ekran karti boyutlari hemen hemen laptop boyutundadir
+## bir laptop icerisine yerlestirilmesi cok zordur. bu nedenle ekran kartindaki
+## yüksek teknoloji islemcilere uygulanamaz
+
+## ikisinin kullanim amaci farklidir. cpu pc nin beynidir
+## ancak ekran karti oyun gibi amaclar icin kullanilir 
+
+## pc de hangi dili kullanirsak kullanalim bunlar temelde assembly diline 
+## cevrilir cünkü islemci sadece bu dilden anlar 
+
+## mesela biz python kodu yazdigimizda, bu python derleyicisi tarafindan
+### assembly diline cevrilir 
+
+## biz programlama dilerinde tüm matematiksel islemleri kullaniriz
+## ama islemci, sadece toplama ve bölme yapabilir 
+# cikarma ve carpma yapamaz
+
+## iste burada compiler buradaki carpma islemini sadece toplama 
+## ve bölme islemi ile yapmaya calisir 
+
+## komut setleri:  islemcinin desteklemis oldugu komutlarin bir kümesidir
+
+## bazi server türleri:
+
+web server 
+proxy server 
+mail server 
+print server 
+app server 
+dns server 
+file server 
+telephony server 
+
+## server ve client fiziksel ve logical olarak ikiye ayrilir
+
+## mesela ders esnasinda hoca dahil herkes client zoom server i ise 
+## server dir 
+
+## ancak logical olarak hocanin pc si server, ögrencilerin ise client dir 
+
+## network dünyasinda hersey logical ve fiziksel olarak ikiye ayrilir 
+### fiziksel, cihazlarin konumunu belirtirken, logical ise verinin islenis
+## bicimini belirler 
+
+
+## Segment: Bir agin belirli bir bölgesini tanimlayan kelime
+## bir ag birden cok segment den olusabilir 
+## hangi kisimlarin segment olacagini ise admin belirler 
+
+
+## Backbone: Özel bir fiziksel kablo türüdür
+# ayni zamanda fast link olarak da adlandirilir 
+# agin segmentleri arasinda hizli veri transferine uygun 
+bir kablodur 
+
+
+## Transmission media:  verinin iletildigi ortam demektir  
+
+## ikiye ayrilir:
+
+## guided media : kablolu 
+    1: Coaxial (en eski kablodur. Tv antenlerinde kullanilir)
+        -- ikiye ayrilir:
+            -- baseband: (ayni anda tek sinyal gönderir)
+            -- broadband: (ayni anda birden cok sinyal gönderir)
+    2: Fiber optik(diger kablolarda elektrik akimlari kullanilir burada isik demetleri)
+        dolayisi ile en hizli 
+    3: Twisted (günümüzde en cok kulanilan kablolu mediadir.
+    asil adi twisted pair ama ama ethernet kablosu olarak da bilinir)
+
+        -- Kendi icinde izolasyonlu ve izolasyonsuz olarak ikiye ayrilir
+## unguided media: kablosuz (mesela bluetooth)
+
+       -- kendi icinde 3 e ayrilir:
+            -- radyo dalgalari
+            -- Mikrodalga sinyaller
+            -- infrared 
+
+
+
+## media aklimiza verinin depolandigi veya iletildigi bir ortamdir
+## mesela cd, dvd, flash bellek, 
+
+
+### communication tüm dünyada 3 cesittir:
+
+1: simplex: sadece tek yönlü iletisim 
+
+2: Half duplex: iki yönlü iletisim mümkün ama ayni anda sadece biri yapilabilir 
+
+## mesela walky talky telsizler
+
+3: Full duplex: ayni anda hem alma hem gönderme mesela telefon
+
+
+
+########### MAN (metropolitan area network)
+-- sehir capinda
+
+### CAM: campus area network: 
+-- genel üniversite campuslerinde
+
+
+### WAN: birden cok agdan olusur 
+
+
+
+
+#####################  Network Topology:
+
+## Kendi icerisinde ikiye ayrilir:
+
+## Physical topology: Pc lerin fiziksel pozisyonu
+
+## Logical topology: verinin network üzerinde iletim sekli 
+
+## physical ile logical topology birbiri ile ayni olmak zorunda degildir 
+
+## Topology sunlara baglidir:
+
+-- Office düzeni (office layout)
+-- Troubleshooting teknikleri
+-- Kurulum maliyetleri
+-- Kullanilan kablonun sekline (özellikle fiber kablo cok pahali)
+
+
+
+### Fiziksel topology sekilleri:
+
+1: Bus topology: 
+
+-- Backbone adinda kalin ve hizli bir kablodan olusan ana hat bulunur 
+Diger cihazlar daha ince kablolar ile bu ana hatta baglanir 
+-- Backbone un diger adi fast link 
+
+-- ana hattan gecen kablonun rolü bus kendi tipi fast link kablo 
+
+-- agirlikli olarak askeri sistemlerde kullanilir 
+
+-- dizilimi kolay basit 
+
+-- maliyeti düsük (sadece bir kablo ve birkac jag alinir)
+
+-- eger ana kablo cökerse tüm network cöker 
+
+-- düsük network performansi 
+
+-- ayni anda sadece tek bir cihaz gönderim yapabilir. digerleri beklemek zorundadir
+
+-- Not scalable(üzerine ekleyebilecegimiz cihaz sayisi belirlidir)
+
+-- Backbone ethernet kablosundan daha saglam bir kablodur 
+
+
+
+
+
+
+
+
+2: Star Topology: 
+
+-- günümüzde en cok kullanilan tip 
+
+-- ortadan hub veya switch var tüm cihazlar buna bagli 
+
+-- evlerde kullanilan yöntem bu 
+
+-- tüm cihazlar wifi router a bagli 
+
+-- yönetimi kolaydir
+
+-- sadece birkac kabloya ihtiyac duyar
+
+--- eger ortadaki cihaz giderse tüm ag cöker 
+
+-- performans tamamen ortadaki cihaza bagli 
+
+-- node larin yani cihazlarin kapasitesi cok önemli degil 
+
+ -- evlerdeki internetin hizi gibi. pc mizin ne kadar hizli oldugunun pek 
+ -- önemi olmuyor 
+
+
+
+
+
+
+ 3: Ring Topology: 
+
+ -- IBM gelistirdi
+
+ -- burada yine sympex kablo var 
+
+ -- tüm pc ler cember seklinde bir sonraki cihaza bagli 
+
+ -- iletisim saat yönünde olur 
+-- bu nedenle eger solumuzdaki cihaza veri göndermek istersek
+-- tüm cemberi dolasiriz 
+
+-- cift ring yöntemi de mümkündür iki yönde 
+
+
+
+
+
+##### Mash Topology: 
+
+-- Agdaki tüm cihazlar birbirleri ile baglidir 
+
+-- reliable yani güvenilir. cünkü agdaki birkac cihaz cökse bile 
+-- iletisim devam eder 
+
+-- configuration komplex dir 
+
+- pahalidir (cok fazla kabloya ihtiyac duyar)
+
+-- interneti olusturan router lar bu tip 
+
+ -- cok karmasik bir yapidir. router larin görevi sürekli olarak 
+ -- en az maliyetli yolu bulmaktir
+
+
+
+
+
+
+ 4:  Tree (hierarchy ) Topology:
+
+ -- agac ve onun kollari gibi bir yapidadir 
+
+ -- ortada root adinda ana bir cihaz vardir 
+
+ -- Bu cihaza switch yada hub lar baglayarak ag olusturulur 
+
+ -- genellikle eskiden Üni lerde kullanilirdi
+
+ -- yönetimi zordur ama en scalable yöntemlerden biridir 
+
+ -- kapasite doldugunda yeni switch yada hub lar ekleyerek yeni 
+ -- cihazlar ekleyebiliyoruz 
+
+ -- root cökerse tüm ag cöker 
+
+
+
+
+
+ 5: Hybrid Topology:
+
+ -- birden cok yöntemin birlesimidir
+
+ -- Cogu firma birden cok topology kullanir 
+
+ -- flexible dir 
+
+ 
+
+
+
+
+6: Point to point topology:
+
+-- Bir cihaz sadece bir cihaza bagli 
+
+-- bus 'a benzer ama burada backbone kablo yok 
+
+-- ring'de bir cihaz ayni anda iki cihaza bagli 
+-- burada ise sadece tek pc ye bagli 
+
+-- mash topology lerde her bir pc diger bir pc ye bu 
+-- yöntem ile baglidir
+
+-- yani interneti olusturan router lar birbirine bu sekilde bagli 
+
+
+
+
+Not: su anda bi internete karasal baglantilar ile baglaniyoruz
+-- fiber de bu sekilde ADSL WDSL de bu sekilde 
+
+-- starlink ise cift yönlü uydu internetidir. 
+
+-- en büyük avantaji diger sirketlere göre, yörüngesi cok alcak 
+-- dünyaya cok yakin . amac response time' i düsürmek 
+
+-- en yavas internet uydu internetidir. mesafelerden dolayi 
+
+
+
+## Günümüzde en hizli kablo fiber optik dir 
+
+
+
+
+
+
+
+
+
+###################### OSI 
+
+-- su an da internet  TSP IP model üzerinde calisir 
+-- ama ag cihazlarimizda OSI model üzerinde calisir 
+
+osi ile tcp ip arasinda hicbir fark yoktur. osi model 
+-- tüm sistemi 7 katmana bölmüsken tcp ip 4 katmana bölmüstür 
+
+-- günümüzde internet tcp ip sistem üzerinde kuruludur. osi ise daha cok donanim 
+-- ütericileri tarafindan kullanilmaktadir
+
+-- eskiden sadece ayni yazilim ve donanimsal özelliklere sahip cihazlar birbiri ile iletisim 
+-- kuarabiliyordu. Bu nedenle ISO tarafindan 1984 yilinda bir 
+-- standart gelistirildi. Böylece tüm cihaz üreticileri bu standartlara göre üretim yapmaya 
+-- basladilar ve tüm cihazlar birbiri ile iletisim kurabilir oldu 
+
+-- Bu model bir zorunluluk degildir sadece tavsiye niteligindedir
+-- isteyen üretici kafasina göre üretim yapabilir ama kimse tercih etmez 
+
+-- OSI nedir ??
+
+-- tüm sistem 7 katmana bölünmüstür
+
+-- üstten asagi su sekildedir:
+
+
+7: Application layer: insan ile pc nin etkilesime gectigi katmandir
+-- app ler network servislerine giris saglar
+-- userlar olarak bizler sadece bu katmanda iletisime geceriz 
+
+--- burada bizim pc mizdeki browser ve app ler bulunur.
+-- mesela biz browser a bir web adresi yazariz ve tiklariz. bundan sonra 
+-- 7. katmandan 1 e kadar tüm sürec isler. 7. katmandan sonra bizim hicbir müdahalemiz yoktur
+
+-- 7 den 1 e gider. sonra 1 den 7 ye kadar cevap gelir ve biz en son yaniti görürüz mesela google.com 
+--u arama motoruna yazmamiz gibi 
+
+
+6: Presentation layer: 
+
+-- biz arama motoruna google.com yazdiktan sonra bu 7. katmandan 6. katmana iletilir
+
+-- Bu katmanda veri translate edilir
+-- encryption yani sifreleme yapilir 
+-- ve performansi artirmak icin veri sikistirilir (compressing data)
+
+-- internette verile 1.5 KB lik paketler halinde gönderilir. Bu nedenle performansi artirmak icin 
+-- her veri sikistirilmalidir
+
+
+5: Session layer: iletisimin devamliligini saglar port larin ve sessionlarin
+-- kontrolünden sorumludur 
+
+--- 2 cihaz arasindaki communication in baslatilmasi ve 
+-- kapatilmasindan sorumludur 
+-- communication in acilmasi ve kapanmasi arasinda gecen süre 
+-- session olarak bilinir 
+
+- mesela netflix e giris yaparken sifre gireriz ve session baslar. ne zaman oturumu kapatirsak
+-- bu durumda session sonlanir
+
+-- giris esnasinda girdigimiz sifreler biy yere yazilmaz hafiyada tutulur. cikis yapinca da silinir
+-- ve yeni giris esnasinda tekrar sifre istenir
+
+4: Transport layer: TCP ve UDP gibi iletim protokollerini kullanarak
+-- datayi iletir
+-- Bu katmanda isletim sisteminin kernel'i söz sahibidir. baska  bir yazilim yada donanim 
+-- söz sahibi degildir 
+
+-- buradaki kernel dan sonra da donanim kismi baslar 
+
+-- hicbir app hicbir donanima dogrudan ulasamaz. öncelikle kernel den müsaade istenir.
+-- mesela zoom esnasinda kamera kullanimi kernel izni ile olur 
+
+-- iste network de de bu katmanda kernel devreye girer ve yukaridan gelen bilgiyi
+-- ethetnet kartina ag kartina iletmek icin hazirlar
+
+- burada data encapsulation denilen datayi segmentlere bölme islemi baslar 
+
+-- buraya kadar veri tek parca halinde geldi. buradan sonra veri aga iletilmek icin minin parcalara ayrilir 
+-- olusan her bir parcaya segment denir 
+
+-- kontrolün akisindan da sorumludur bu katman 
+-- gelen giden trafigin akisindan 
+
+-- gelen verilerin dogrulugunu,  giden verilerin ise ulasip ulasmadigini kontrol eder 
+
+--- error kontrol yapar. eger veri hatali ise hicbir cihaz düzeltmek ile ugrasmaz
+-- hatali veri diskart edilir 
+
+
+3: Network layer: Datanin hangi fiziksel yolu alacagina karar verir 
+ -- artik donanimin oldugu kisma gecildi 
+ -- burada aglar arasinda yada cihazlar arasinda data transferine baslanir
+
+ -- üst katmandan gelen veriler artik paketlere cevrilir. günümüzdeki isimleri ip packets dir 
+  yukarida segmentlere ayrilmis data bu katmanda ip packet lere dönüstürülür 
+  -- paketler icerisinde ne vardir. gönderici ve alici ip adresleri vardir 
+
+--- bir cihaz, internet üzerinde alisveris yapabilmek icin iki seye ihtiyac duyar 
+1: ip adres 
+2: mac adres (media access control adress)
+- her cihaz fabrikadan cikarken icine gömülü bir adres cikar.
+-- bütün ethernet kartlarinin adresleri unique dir 
+-- bunlarin ikisi de unique dir ve dünya üzerinde esi yoktur 
+-- ip adresi farkli network lerdeki cihazlarin haberlesmesi icin kullanilirken
+-- mac adresi ayni network icerisindeki cihazlarin haberlesmesinde kullanilir  
+
+-- ip paketi olustururken gönderici ve alicinin ip adreslerini ekliyoruz 
+-- frame olusturken ise mac adreslerini ekliyoruz 
+
+-- ip paketlerini de kernel hazirlar. 
+-- data link layer a geldigimizde ise ethernet karti icerisindeki cipler veriyi bit stream lere cevirir
+
+-- layer 3 de ip adresleri gündemde layer iki de ise mac adresleri 
+-- gündemdedir. yani ayni network icerisindeki cihazlar haberlesecek ise bu durumda 
+-- 3. katman atlanir 2. katmana gecilir 
+
+-- mac adresi makine adresi olarak düsünülebilir
+
+-- layer 2 her halükarda ugrak noktasidir. mac adresi her ihtimalde kullanilir 
+
+-- ip adresi logical bir adrestir yazilimsal olarak her internete baglandigimizda 
+-- farkli bir ip adresi alabiliriz 
+
+-- ama mac adresleri degismez . aga baglanan tüm cihazlarda, telefon, akilli tv, pc mutlaka mac 
+- adresi bulunur . network interface adapter denilen yani ethernet karti tüm cihazlarda bulunur 
+
+-- ip adresi türkcell, vodafone gibi internet saglayicilari tarafindan bize verilir 
+
+-- mac adresini degistirmek icin ethernet karti degismesi gerekir 
+-- ama günümüzde bu pek mümkün degil fabrikadan gmülü gelir
+
+-- mac adres : donanimsal 
+-- ip adres: yazilimsal
+
+2:  Datalink layer: network deki datanin formatini tanimlar
+
+-- upper layer dan paketleri alir ve bunlari frame lere dönüstürür 
+
+
+1:  Physical Layer: Bit akislarini fiziksel ortama iletir
+
+-- verinin elektrik sinyallerine(bit stream) cevrilip elektrik sinyalleri seklinde islem 
+-- gördügü katmandir 
+
+-- Burada daha cok kablolar ön plandadir
+
+-- layer 1 cihazlar sunlardir ve bunlarin veriyi isleme kapasitesi yoktur 
+-- sadece veriyi iletirler
+
+-- cables
+- transeivers
+-- repeaters
+-- media converters
+-- modems 
+-- hubs 
+
+
+
+Not: 7,6 ve 5 inci katmanlar upper layers olarak gecer ve 
+-- operating sistem yani yazilim ile ilgilidir 
+
+
+4, 3, 2, 1 ise donanimla yani network la ilgilidir 
+
+
+
+
+############## Data Encapsulation:
+
+-- layerlar arasinda veri göndermek icin, verinin hazirlanma islemine denir 
+
+-- verinin 7. kattan 1 e dogru inisine encapsulation denir 
+
+-- daha sonra 1. katmandan 7 e dogru cikisina da de-encapsulation denir 
+
+-- encapsulation transport (4.) layer da baslar. burada segmente dönüstürülür 
+
+-- network layer da tekrar encap. olur ve packet e dönüsür 
+
+-- 2. katmanda (data link)  frame e dönüsür 
+
+-- ve en altta da bit stream e dönüstürülür 
+
+
+
+-- 1. layerdan gecen veri router ile aga gönderilir 
+
+-- daha sonra baska bir network veriyi alir ve az önceki islemlerin tersini uygulayarak
+-- 7. katmana applicationlara gönderir 
+
+
+-- ag üzerindeki tüm veriler frame seklinde gönderilir.
+-- bununda max boyutu 1.5 KB boyutundadir 
+
+-- ne gönderirsek gönderelim internetteki veriler frame ler seklinde gönderilir 
+
+-- layer 7 cihaz denildiginde bunun OSI modele göre siniflandirilmis bir cihaz oldugunu 
+-- anlayacagiz. 
+
+-- mesela layer 7 cihaza örnek, Fire Wall dur. Güvenlik duvarlari hem yazilim hem donanim olabilir 
+
+-- router layer 3 cihazdir. bu, gelen paketin icerisini acip ip adresini okuyabilen cihaz demektir 
+-- aksi takdirde internette veri gönderimi yapilamazdi
+
+--  2. layer cihazlar ise veri paketinin icerisini acip ip adreslerini okuyamaz
+
+--  layer 3 cihaz demek, layer 1, 2 ve 3 ün hepsinin standartlarini sagliyor demektir 
+
+-- yani router 2. katmandadaki bir frame in icini acip okuyabilir 
+
+
+
+
+-- 7, 6 ve 5. katmanlarda data hazirlanir
+
+-- 4. katmanda bu datanin basina bir segment header konulur
+
+- 3. katmanda basina packet header konulur 
+
+-- 2. katmanda ise basina frame header ve frame trailer konulur 
+
+
+-- de-encapsulation da ise baslara konulan tüm bu header lar kaldirilarak yukari dogru cikilir
+
+
+
+
+
+-- wifi router la, mac adresimiz olmadan iletisim kuramayiz
+
+-- dünyada belli sayida ip adresi var. bu nedenle ip adresimizden hangi bölgeden
+-- internete baglandigimiz belli olur 
+
+-- mac adresi router dan öteye gidemez
+
+-- her frame de yeni bir mac adresi devreye girer 
+
+-- hub veya switch lere ihtiyac duyan topology star topology 
+
+-- osi modelin kullanim amaci: üreticiler icin bir standart olusturmak 
+
+-- 
