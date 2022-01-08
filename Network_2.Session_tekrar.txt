@@ -1,0 +1,673 @@
+-- osi model genel cerceveyi cizer. Bu tavsiyeler icerisinde detaylandirma da mevcuttur 
+
+-- layer 1 ve layer 2 deki standartlari belirleyen dökümantasyonun ismi ethernet
+-- yani 1. ve 2. katmanlar ile ilgilidir
+
+-- mac adres ethernet dökümantasyonunda yer alan bir adrestir
+
+-- dökümantasyonun resmi adi 802.3 dür
+
+-- IEEE (Institute of Electrical and Electronics Engineers) tarafindan gelistirildi
+
+-- cihazlari bir network e baglamak icin bir teknolojidir
+
+-- Verinin nasil ve hangi formatta iletilecegini aciklar bu format. eger bir cihaz üretmek istersek
+-- bu standartlara göre üretiriz. aksi takdirde herkesin kullandigi agda bizim kablomuz ve kartimiz 
+-- bir ise yaramaz
+
+-- Standardin adi ethernet dolayisi ile bu standarda göre üretilmis kablolara ethernet kablosu
+-- bu standartlara göre üretilmis kartlara da ethernet karti deriz 
+
+-- 10Base-T 
+-- 100Base-T 
+
+-- Bu isimlerde bastaki rakam kablo hizi
+-- Base tek ayni anda tek sinyal
+-- Broad ayni anda birden cok sinyal
+
+- Sondaki T ise kablo tipi (burada twisted demek)
+-- Bu kablo tipinde kablolar büklüm büklüm oldugu icin twisted denir 
+
+-- Ethernet kablosunun hizi ve tipi ne olursa olsun maximum veri ilettigi mesafe 100 metre
+
+-- bu nedenle 100 m de bir yükseltici koymak zorundayiz
+-- bu kablo genelde yerel ag icinde kullanilir
+
+--  ag disina cikanlar ise genelde, coaxial yada fiber kablo olur 
+
+-- 1000Base-LX bu kablo fiber kablodur
+-- mesafe 300 m ile 70 km arasinda degisir
+
+-- okyanuslarin altinda kitalar arasi iletisim icin fiber kablolar dösendi
+-- burada da 5000 m de bir yükseltici koymak zorundayiz 
+
+-- günümüzdeki en hizli ethernet kablosu, 10 Gigabit
+-- fiber optik kablolar ise 70 terabit e kadar gönderim yapar 
+-- bu kablolarin hizina yetisen baska bir teknoloji yok su an 
+
+-- CAT7 fiber kablo kategorisidir.
+-- mesela bizim kapidan evdeki modeme kadar cektigimiz kablo 
+
+
+-- ethernet kablosu icinde 8 adet ince kablo vardir.
+- Bunlar ikili ikili birbiri ile bükülmüstür.
+-- Bu nedenle twisted pair denir 
+
+-- UTP: Unshielded twisted pair (izolasyonsuz)
+-- STP: Shielded twisted pair (aluminyum folyo dis gürültüyü engleyen katman)
+
+-- evlerde tv arkasinda coaxial kablo kullanilir 
+-- bunlar iki türlüdür
+
+1: Thicknet(10Base5)
+
+2: Thinnet(10Base2)  (biraz daha kalin)
+
+-- bus topology de ana kabloya baglanan kablolar bunlardir
+
+
+
+
+-- Fiber kablolarin en icerisinde "core" adinda veri ileten bir kisim vardir 
+-- bu sac telinden daha incedir
+
+-- bunun üzerinde 4 tane daha katman bulunur.
+-- core cam elyafindan yada plastikten yapilir.
+
+-- plastigin performansi daha düsüktür cam elyafi ise 
+-- daha hassastir. 
+-- her türlü bükülebilir ama üzerinden birsey gectiginde zarar görme ihtimali yüksek
+
+
+--- ethernet neden twisted pair?
+
+-- icerisinden elektrik akimi gecen her kablo etrafinda manyetik alan olusur
+-- bu nedenle diger kablolari etkiler
+
+-- iste twisted pair dedigimiz cift kablolarin, birinde veri gönderimi digerinde veri alisi 
+--- yapilir. böylece birbirlerinin manyetik dalagalarini nötr lerler ve diger kablolari etkilemezler 
+
+-- kablosuz sarj lar da bu mantik ile calisir. bir manyetik alan olusturulur ve burada pili sarj eden
+-- devre üzerinde bir elektrik akimi üretilir 
+
+-- manyetik alanin sagliga zararli bir yani yoktur
+
+-- havaalanlarindakiler haric avm girislerindeki gibi aramalar bu yöntem ile yapilir 
+
+-- MR cihazlarinda da manyetik alan kullanilir 
+-- elektromanyetik rezonans
+
+-- dünyanin da kendine ait manyetik alani vardir. günesin zararli isinlarini absorbe eder 
+
+-- manyetik alan olustursak kablo icinden elektrik akimi gecer
+-- kablodan elektrik akimi gecerse manyetik alan olusur 
+
+
+
+
+
+
+##### Collisison Domain:
+
+-- ethernet kablolari half dublex dir 
+-- icerisindeki 8 kablodan 4 ü sadece alma, 4 ü ise sadece gönderme
+
+-- collision network icerisinde paketlerin birbiri ile cakismasidir
+-- ayni anda sadece bir pc gönderim yapabiliyor
+-- birden cok pc gönderim yapmak isterse catisma cikar 
+
+-- collision domain ise catisma cikan alan demektir
+
+-- bu esnada catisma aninda hicbir pc agi kullanamayacaktir
+
+-- collision domain kacinilmaz bir durumdur
+
+-- collision demek iletisimin o anda durmasi demek 
+
+-- bu kacinilmaz bir durumdur ama collision domain in boyutu kücültülebilir
+
+-- 100 pc lik bir alani mesela 4 e bölerek catisma alani kücültülebilir 
+
+-- 25 pc demek daha az catisma demek 
+
+-- hub kullanilan tüm ag larda catisma cikar (en temel seviye cihaz)
+
+-- hub gelen verinin icerigini okumaktan aciz oldugu icin gelen veriyi tüm pc lere gönderir 
+
+-- Bu durumda catismaya sebep oluyor
+
+-- catisma durumunda ise tüm pc ler bir süre bekleyip tekrar göndermeyi deniyorlar
+
+-- bizim evde kullandigimiz fiber kablolar single mod kablodur 
+-- yani tek yönlü gönderim yapar. 
+
+-- Bu nedenle 2 tane fiber optik kablo kullaniriz. Biri alma biri gönderme ve bu iki kablodan 
+-- gelen isin demetlerini converter adinda bir cihaz elektrik sinyallerine dönüstürür ve ethernet 
+-- kablosu ile network devam eder 
+
+-- Ethernet kablosuna iki fiber optik girisi oldugu icin, ethernet icerisinde 8 kablo olmasina
+-- ragmen bu kablolardan sadece 4 tanesi kullanilir. bunlardan da 2 si transmit 2 si de receive icin 
+
+-- Hub kullandigimiz her agda, bir hub'a bagli tüm cihazlarin olusturdugu dis sinir bir collasion domain olur 
+
+-- collesion domain 1 pc ye kadar düsürülebilir
+-- bu da hub dan daha akilli bir cihaz kullanmakla mümkündür 
+
+-- hub sadece kendisine gelen digital sinyalleri cogaltip, diger tüm portlardan gönderir 
+
+-- router ip adreslerini okur 
+-- switch mac adreslerini okur 
+
+-- mesela 3 pc nin bagli oldugu bir hub düsünelim. Bu durumda collesion domain'in boyutu 
+-- 3 pc olur. ama biz burada hub'i kaldirir switch kullanirsak, bu durumda collesion domain 
+-- 1 pc ye düsürülmüs olur.  cünkü switch daha akillidir ve gönderilen ve gelen adresi okuyup,
+-- paketi sadece alacak kisiye gönderir.
+
+-- collesion domain sifirlanamaz cünkü pc ve network mimarisinde bu dogal olarak olusan birseydir 
+
+-- günümüzde pc lerimiz network hizina yetisemedigi icin, collesion domain ler bizim hizimizi 
+-- etkilememektedir
+
+-- eskiden hub lar cok ucuz oldugu icin genelde hub kullanilirdi. simdi ise switch kullanilmaktadir genelde.
+- bu nedenle, catismalar asgari düzeye inmistir
+
+
+
+############  Broadcast domain:
+
+--- tek bir alicisi olmayan mesaja, yani agdaki herkese gönderilen mesaja broadcast mesaj denir.
+-- mesala radyo yayini 
+
+-- mesela aga yeni birisi katildi ve "ben agda yeniyim lütfen bana herkes mac ve ip adresini göndersin"
+-- yazdi ve herkes cevap atti. bu broadcast mesajdir
+
+-- bu mesajlar agin performansini düsürür 
+
+-- broadcast mesaji olmazsa ag iletisimi olmaz 
+
+--  bir broadcast mesaji alan switch, bunu tüm port larindan gönderir.
+-- Böylece bir pc den gönderilen bir mesaj tüm aga yayilir.
+
+-- Broadcast domain in boyutunu düsürmek ise, switch yerine router kullanmakla mümkündür 
+
+-- cünkü router lardan broadcast mesaj gecmez
+
+-- eger kendisini ilgilendiren bir mesaj ise gönderim yapar ama tüm port lara göndermez 
+
+-- hub larin kullanildigi ag da collesion domain,
+-- switch lerin kullanildigi agda broadcast domain olusur 
+
+
+-- CSMA/ CD :
+
+-- Carrier sense multiple access / collision detection
+
+-- collisionlari engellemek icin kullanilir 
+
+-- bizim evimizde kullanilan kablolar ve 
+-- bizim router i mizdan santral e giden kablolar baseband dir 
+
+-- ama operatörümüzden internete giden kablolar broadband olur 
+-- yani ayni anda birden cok sinyal gönderebilirler
+
+--  Bir ag üzerinde dolasan bir frame üzerinde 4 tame adres vardir 
+-- alici ve gönderici mac adresleri 
+--- alici ve gönderici ip adresleri 
+
+- router hepsini okuyabilir
+
+-- router lar aslinda kendi islemcisi olan bir pc dir 
+
+-- switch e göre pahalidir tabi ki 
+
+-- mac adresi ethernet adresi olarak da gecer 
+
+-- mac adresleri hexadecimal yani 16 lik sisteme göre yazilir 
+
+-- ip adresleri 10 luk sisteme göre yazilir 
+
+-- bit:  binary digit kelimelerinin kisaltmasidir ve en kücük veridir
+-- sayi ciftleridir
+
+-- 1 byte 8 bittir
+
+-- 1 nibble:  4 bit yani yarim byte tir 
+
+-- 0x4E   yada 4Eh
+
+-- burada x ve h harfleri, bu sayilarin hexadecimal oldugunu idafe eder 
+
+
+
+--- Ethernet addresing (Mac Address)
+
+-- 48 bit lik (6 bytes or 12 digit hex) hardware number
+
+-- su sekilde yazilir:
+
+-- 00:1A:3F:D3:2C:11  yada 
+-- 00-1A-3F-D3-2C-1 
+
+-- ilk 6 basamak firma ismini verir (organizationally unique identifier)
+-- yani bu karti hangi firma üretmis 
+--  
+
+-- mac number ethernet karti üzerinde rom(read only memory) olarak gömülü gelir 
+
+-- mac number arabalardaki sasi numarasi gibidir ve degistirilemez
+
+-- 2. 6 haneli rakam blogu ise:
+
+-- karta özel adrestir 
+
+-- Network Interface controller specific dir 
+
+
+
+
+######## Types of Mac Adress:
+
+-- 1: Unicast:  tek bir alicisi olan mesaj 
+
+-- biz sadece alicisini yaziyoruz. böylece bir gönderici ve bir alicisi olmus oluyor 
+-- buna unicast mesaj denir 
+
+
+
+############### Multicast:
+
+-- birden cok alicisi olan mesajdir 
+
+-- netflix gibi bir aliciya abone oluyorsunuz ve 
+-- bu aliciya gelen mesajlari aliyoruz
+
+
+
+
+###################   Broadcast:
+
+-- agdaki tüm cihazlara gidecek olan mesaj:
+
+-- gönderici kendi mac adresimiz
+-- alici yerine ise, 
+-- FF:FF:FF:FF:FF:FF bu adres yazilir (bunu gören switch ler bunun broadcast oldugunu anlar 
+-- ve tüm port larindan gönderirler)
+
+-- mac adresi bazen de physical adress olarak da gecer
+
+-- 
+
+-- bir cihazda birden fazla mac adres olabilir mi?
+
+-- Birden fazla interface varsa olabilir 
+
+-- mesela router larin her bir port unda bir network interface kart vardir 
+-- yani her bir potunda ayri bir ethernet karti ayri bir mac adres vardir 
+
+-- bir kisiye mesaj göndermek icin sadece mac adresini bilmek yaterli degildir
+-- ip adresini de bilmek zorundayiz 
+
+-- ayni lan icerisinde isek, broadcast mesaji göndeririz ve ip adresini ögreniriz
+-- daha sonra mesaj gönderebiliriz
+
+-- ama farkli bir agda ise bunnu broadcast mesaji ile bulamayiz. cünkü router lar broadcast 
+--- mesaji gecirmez 
+
+switch kullandigimizda da collesion domain olusur. ancak bir hub a bagli tüm cihazlar sadece bir tane 
+-- büyük collecion domain olusturur 
+
+-- switch e bagli cihazlar ise her biri kendi icerisinde kücük bir collesion domain olusturur 
+
+-- yani 10 port luk bir hub da 1 tane 
+-- 10 port luk bir switch de 10 tane collecion domain vardir 
+
+
+-- evimideki router üzerindeki sayilar:
+
+-- SSID: adimiz, yani ag ismi olarak yayinlanan
+
+-- Ip adresi: modemin ip adresi 
+
+-- bir cep telefonu internete baglandigi icin bir mac adresi vardir 
+
+-- birde mobil cihaz olmasi hasebiyle IMEI adresi vardir 
+-- bu numarada gömülü gelir 
+
+-- switch lerin her bir port'u yani switch lerle ayrilmis her bir alan 
+-- collesion domain dir 
+
+-- router larin her bir port u, yani router larla ayrilmis her bir alan 
+-- broadcast domain dir 
+
+--- IP adresleri iki cesittir:
+
+-- privat (bununla internete baglanamayiz. public ile baglanilir)
+-- modemimizin üzerinde yazan privat ip adresidir
+-- public 
+
+
+################ Networking Devices (cihazlar)
+
+-- Network interface controller(NIC) = Ethernet karti
+
+-- pc leri network icin birbirine baglar 
+
+-- her bir NIC, unique bir mac adresine sahiptir
+
+-- layer 2 de bir cihazdir 
+
+-- gelen mesajin ip adreslerini okuyabilir 
+
+
+
+
+
+##################  Hub:
+
+-- güvenli degildir. cünkü bir mesaji herkes alir 
+
+-- Routing yetenegi yoktur 
+
+-- half dublex dir. ya gönderme ya alma 
+-- ikisini ayni anda yapamadigi icin collesion domain olusturur 
+
+-- layer 1 cihaz 
+
+
+
+
+
+
+#################### Switch:
+
+-- layer 2 cihaz 
+
+-- mesaji sadece aliciya gönderir 
+
+--  Full dublex 
+
+-- switch hangi portunda hangi pc nin bagli oldugunu nasil biliyor?
+
+-- bir tane broadcast mesaji gönderir ve agin haritasini cikarir
+-- böylece gelen her mesaji sadece alici adrese gönderir 
+
+
+
+
+
+
+
+############## Bridge:
+
+-- layer 2 cihaz 
+
+-- bridge ler switch ler kadar pahali degildir 
+
+-- Bu nedenle switch alinamadigi zaman büyük bir colesion 
+-- domain'i bölmek icin kullanilir 
+
+-- cok fazla portu yoktur. en fazla 2 ye yada 4 e bölünebilir 
+
+-- Kullanim amaci:
+
+-- hub larin kullanildigi aglarda collesion domain 'i bölmek icin kullanilir 
+
+-- layer 2 oldugu icin eger adres bir pc ye ait degilse o adrese göndermez 
+
+-- bridge biraz gecici bir cözümdür
+
+-- kalici cözüm switch dir
+
+
+
+
+
+
+#################  Router:
+
+-- ag lardaki en akilli cihazlardan biridir
+
+-- kendi isletim sistemi vardir. bir maus ve monitör monte ederek
+-- pc olarak kullanilabilir, ayarlari yapilabilir 
+
+-- switch ler de yazilim yoktur. tamamen elektronik devreler üzerinden calisir 
+
+-- bunlarda asics denilen cipler vardir. bunlar mac adreslerini yorumlar ve tespit eder 
+
+-- dünya üzerinde interneeti olusturan tüm routerlar birbirine 
+-- mash topology ile bagli 
+
+-- bu cihazlar intenetin bel kemigidir
+
+-- iclerinde cok gelismis algoritmalar vardir 
+
+-- bunlari sürekli calistirarak, dünya da hangi router a en az maliyet ile nasil 
+-- gidecegini hesaplar 
+
+-- router in her bir port u bir lan dir cünkü her bir port un da bir mac adresi vardir 
+-- yani ethernet karti vardir 
+
+-- layer 3 cihaz 
+
+-- bir router in görevi, paketi en hizli sekilde aliciya ulastirmak
+
+
+
+
+
+
+
+
+
+################### Firewall:
+
+## bunun donanimsal kisimlari ve yazilimsal kisimlari vardir 
+
+-- donanimsal kisim, black box olarak isimlendirilir
+
+-- görevi, network de yetkisiz erisimi engellemek 
+-- cift yönlü calisir, disaridan iceriye ve iceriden disariya
+
+-- en büyük amac disaridan gelecek saldirilara karsi korumak 
+
+-- donanimsal kisim, router dan önce yani internet ile router arasina konulur 
+
+-- en gelismisi next generation dedigimiz layer 7 de calisanlardir
+
+-- yani bütün layer lardaki verileri kontrol edebilir
+-- aldatmasi cok zordur 
+
+
+
+
+
+
+
+############### IDS/IPS: 
+
+- Bunlar ilave güvenlik sistemleridir
+
+-- IDS: intrusion detection system:
+    trafigi gözlemler ve tehlikeli hareketleri report eder
+    sadece tespit eder rapor eder engelleme yoktur 
+     aga paralel olarak kulanilir
+     yaptirim yetkisi yoktur 
+
+-- IPS: intrusion prevention system 
+    tehditleri gercek zamanli olarak anlik olarak durdurur
+    agin icerisinde kullanilir 
+    yaptirim yetkisi var 
+
+
+
+-- cloud da kiraladigimiz tüm serverlara buradaki donanimsal cihazlari ekleyebiliirz
+-- dolayisi ile güvenlik problemi ortadan kalkacaktir 
+
+
+
+
+
+################### Load balancer:
+
+- trafigi arka planda yönlendirir
+
+-- mesela bizim 2 adet pc miz var ve anlik olarak 1000 kullanici var.
+-- 1000 user in hepsini ayni pc ye vermiyor 500 500 olarak dagitiyor.
+- iste bu islemi load balancer yapar 
+
+-- Auto scaling:
+
+-- user sayisina göre cloud da server ayaga kaldiran sistem 
+
+-- belirli bir sayi asildiginda yeni makineler ayaga kaldirir 
+
+-- daha sonra load balancer yeni makineleri de hesaba katarak 
+-- görev dagilimi yapar 
+
+-- Load balancer trafik polisi görevi yapar 
+
+-- ama yeni makine kiralama yetkisi yoktur. bunu asg (auto scaling group yapar )
+
+
+
+
+
+##### DNS server :
+
+-- bizim okudugumuz web isimlerini IP adreslerine cevirir
+
+-- dünyada binlerce dns server vardir. Bu serverlarda ne bulunur?
+-- web site isimleri ve bunlarin ip adresleri bulunur 
+
+-- Biz browser a direkt olarak ip adresi de yazabiliriz. Bu durumda dns server sorgulamaini atladigimiz icin,
+-- web sitesine daha hizli baglaniriz 
+
+-- web sitesi isimleri sabittir ama ip adresleri degisir.
+-- bu nedenle ip adreslerini ezberlesek de ise yaramaz 
+
+-- bu nedenle hic degismeyen dns isimlerini kullaniriz 
+
+-- ip adresi olmadan trafik baslamaz 
+
+
+
+
+
+#### islem sirasi:
+
+-- biz web sitesi ismi gireriz bu dns server a gider 
+--- dns server ip adresini gönderir 
+-- ve bu ip adresi ile trafik baslar 
+
+-- domain isimlerini "IANA" adinda bir kurulus verir 
+
+-- Top level domain:
+-- com
+-- gov
+-- edu
+
+-- gibi uzantisi olan sitelerin istisnasiz hepsinin ip adresinin bulundugu
+-- server lardir 
+
+-- mesela tr uzantili siteler iana nin sorumlulugunda degildir 
+-- türkiye de btk nin sorumlulugundadir
+-- mesela amazon.com.tr btk ya ait  
+
+-- eskiden bu yetki ODTÜ deydi 
+
+-- bu sekilde ülke kisaltmali top level domain server larin neredeyse tamami 
+-- amerika dadir (com, edu, gov)
+
+-- IANA da ICANN(Internet corporation for Assigned Names and Numbers)
+-- tarafindan calistirilir
+
+--- her pc de default olarak bir dns server vardir. eger degisiklik yapmazsak
+-- ip adresleri hep ayni server da sorgulanir 
+
+
+
+
+
+#### Proxy server:
+
+-- agirlikla filtre görevi gören bir server 
+
+-- mesela bir is yerinde isveren calisanlarin belirli sitelere girmelerini istemiyor
+-- bu durumda kullanilir 
+
+-- iceriden disari giden istekler ve disaridan iceri gelen istekler filtrelenir 
+
+-- bizim ve internet arasinda kapi gibi hareket eder 
+
+-- güvenlik duvari yada filtre gibi hareket eder 
+
+-- sik kullanilan siteleri kaydeder ve bu sitelere giris hizli olur 
+
+-- privacy mahremiyet saglar 
+
+
+
+
+
+
+############# encrytion devices 
+
+-- bazen de encrytion gateway olarak adlandirilir
+
+-- güvenli olmayan kanallara güvenli iletisim imkani sunar 
+
+-- yazilimsal ve donanimsal sifreleme olarak ikiye ayrilir 
+
+
+
+
+
+
+############# Packet shaping (traffic shaping)
+
+-- mesela kotali internetler de kotayi astiktan sonra hizi düsüren cihazlar bunlardir 
+
+-- mesela patronun önemli bir görüsmesi var. patrona ayri bir band genisligi aciyor.
+
+-- bu cihazlar kisiye özel band genisligi acan, kota doldugunda hizi düsüren cihazlardir
+
+-- bu isi yapan ciahazlara packet shaper denilir
+
+
+
+
+
+
+
+
+
+############ VPN concentrator:
+
+-- yazilimsal ve donanimsal olarak iki türlüdür :
+
+-- acilimi virtual privat network 
+
+-- biz ethernet karti üzerinden gönderdigimiz veri de artik hicbir kontrol yetkisine sahip degiliz 
+
+-- VPN cihazlari alici ve verici arasinda bir tünel olusturur ve alisveris 
+-- bu tüneller icerisinde olur ve kriptoludur
+
+-- bu cihaz, router in bir türüdür 
+
+-- vpn baglantiyi yavaslatir
+
+
+
+
+
+
+
+--- 802.3  :  ethernet yani kablolu baglanti
+
+--  802.11  : kablosuz baglanti 
+
+
+- eger bir domain e switch dahilse bu collision domain olamaz
+-- broadcast domain dir 
+
+-- 
