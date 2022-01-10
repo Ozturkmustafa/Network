@@ -1,0 +1,990 @@
+-- Donanimda osi model ön planda
+
+-- yazilimda TCP- IP model ön planda 
+
+-- Physical layer in tek amaci; yukaridan gelen veriyi eger kalbolo ag ise
+-- elektrik sinyallerine cevirmek, kablosuz ise 
+-- wifi sinyallerine cevirmek ve veriyi iletmek 
+
+-- LAN da mac adresleri
+
+-- WAN da IP adresleri (yani aga baglanan her cihazin 1 mac bir de IP adresi olmasi gerekir) 
+
+
+
+
+
+-- 1. ve 2. katmanin standartlari Ethernet dökümani ile belrlenmistir
+
+-- 2. katmandaki en önemli cihaz ethernet kartidir 
+
+-- Ethernet karti diger adi network interface card 
+
+-- eger bir yerde interface kelimesi görüyorsak, 
+-- burada bir ethernet karti yani mac adresi var demektir 
+
+
+
+
+
+
+-- 3. katmandaki en önemli cihaz router
+
+-- su an IP version 4 kullanilir 32 bittir
+
+
+
+
+
+
+-- 4: transport layer: burada kernel devreye girer
+
+-- agdan gelen verileri ilgili olduklari app lere dagitir 
+
+-- tüm veriler ayni kablo üzerinden gelir. verinin hangi app e ait 
+-- olduguna kernel karar verir.
+
+-- Protokollerin en cok kkulanildigi katmandir
+
+
+
+
+-- transport layer :   Segment'e dönüsür 
+
+-- Network layer:      packet' a dönüsür 
+
+-- datalink layer:     veri frame'e dönüstürülür
+
+-- physical layer:      Bits 
+
+
+
+
+
+--- Repeater: hub a benzer.  gelen sinyali güclendirerek iletir
+
+-- ethernet kablosu max mesafe 100 metre demistik. eger 200 metreye veri gönderecek isek
+-- 100 metre de bir repeater kullanmak gerekir 
+
+-- sinyal güclendirici olarak calisir
+-- buraya gelen sinyal güclendirilip bir sonraki ethernet kablosuna aktarilir
+
+-- physical layer da calisir 
+
+-- tüm kablolar icin kullanilir 
+
+-- kitalar arasi dösenen fiber optik kablolar dahil
+
+-- sadece elektirik sinyali degil, isik demetlerini güclendiren cihazlar da 
+-- repeater olarak adlandirilir
+
+-- hub larda ayni zamanda bir repeater dir. kendisine geln sinyali güclendirip 
+-- gönderir
+
+
+
+
+
+
+
+
+
+####################   TCP - IP 
+
+-- Transmission Control Protocol / Internet protocol 
+
+-- Bilgisayarlar arasinda iletisimi saglayan bir network protokolüdür 
+
+-- ilk olarak 1974 de ortaya cikmistir
+
+-- 1978 de ise TCP ve IP olmak üzere ikiye bölündü 
+
+-- 1983 de arpanet de data transferi icn resmi anlamini kazandi 
+
+
+
+--- Arpanet, usa savunma bakanligi icerisinde veri göndermek icin kullaniliyordu. 
+-- zamanlar arpanet üni lere ve halka da acildi. ancak arpanet icrisinde mac adresleri ile 
+-- iletisim saglandigindan bu durum iletisim de büyük bir hantalliga sebep oldu. 
+-- ip adresine ihtiyac duyuldu.
+
+-- TCP IP olmadan hicbir pc internete baglanamaz.
+-- her isletim sistemi icerisinde, Protocol Suite dedigimiz
+-- bir yazilim bir framework bulunur 
+
+--- BÜyük bir wan düsünelim. Bunun icerisinde 4 tane lan olsun.
+
+-- isimleri de lan1 lan2 lan3 ve lan4
+
+-- lan1 den lan4 e bir veri gönderilmek istendi. 
+
+-- Tüm lanlar birbirine router lar vasitasi ile baglidir. yani lan1 deki kisi lan4 ün ip adresini bilmeden
+-- buraya veri gönderemez. 
+
+-- router lar ip adresleri ile calisir. Bir lan dan aldigi veriyi diger lan a iletir. ama sadece alici lan a ulastirir.
+-- bu lan icerisinde hangi pc nin veriyi alacagi konusu ile ilgilenmez.
+-- hangi pc konusu ile lan icerisinde bulunna switch ler ilgilenir.
+
+-- lan icerisindeki pc lerin host id leri ve mac adresleri vardir. gelen paketler bu adresler vasitasi ile 
+-- alici pc ye iletilir
+
+-- switch lan lar arasindaki iletisimde kullanilan ip adreslerini okuyamaz.
+-- mac adres okur 
+
+-- wan icerisindeki her bir lan in NET ID si vardir. 
+
+-- IP adresleri ise iki kisimdan olusur.
+-- birinci kisim net id 
+-- ikinci kisim ise lan icerisinde bulunan host id dir 
+
+
+
+
+
+
+
+#### TCP/IP (DoD) and osi model
+
+-- The Dod (department od defense)  created TCP IP to ensure and preserve
+-- data integrity
+
+-- dod model yani tcp ip model osi modelin aynisi ancak sikistirilmis halidir
+
+-- tcp ip 4 katmandan olusur 
+
+--- 4. katman:   osi deki application,   presentation ve session katmanlarinin birlesimi 
+
+-- kullanici ile iletisim 
+-- datanin encryption 'i 
+-- translation 'i 
+-- comprehension'i 
+-- session start ve bitisleri hepsi bu katmanda yapilir
+
+-- burasi app lerin birbiri ile iletisim kurdugu katman 
+
+-- piyasada binlerce protocol vardir. bu protocol leri birbirinden port numaralari ile ayirt ediyoruz
+
+-- her bir protocol ün kendine has port numarasi vardir 
+
+
+
+
+
+-- 3. katman:   transport layer osi ile ayni 
+
+-- bu katmanda kullanilan ana protocoller TCP ve UDP  dir 
+
+-- protocol dedigimiz iletisim dilidir. mesela email server ile iletisim 
+-- kurabilmek icin onun dilinden konusmamiz lazim. bu da protocol dür 
+
+
+
+-- 2. katman:   osi deki network layer dir. buradaki adi ise internet layer dir 
+-- internetin calismasini saglayan katman 
+
+-- yukaridan gelen veriyi paket e cevirir
+
+-- burada router lar devrededir. ilgili paketi alip adrese teslim ederler
+
+-- bu katmanda kullanilan yegane protocol ip dir 
+
+
+-- 1. katman:  buradaki ismi network interface dir. osi deki data link layer ile
+--              physical layer in birlesimidir 
+
+
+-- mac adresleri , ethernet kablolari ve ethernet protokü buradadir
+
+-- evimizde kullandigimiz wifi de bir ethernet standardidir. Bu nedenle bu da bu katmanin bir parcasidir 
+
+-- Bu katmanda kullanilan yegane protokol ethernet dir 
+
+
+
+
+
+
+
+### IP (internet protocol)
+
+--- network ler arasinda iletisim icin kullilmak zorundadir 
+
+-- alici host'u bulabilmek icin, gönderici 2 seye sahip olmak zorundadir:
+(yani bir node bir cihaz ile irtibata gecebilmek icin)
+
+-- 1: alici hangi network üzerindedir? ( Software adress)
+-- ip adresin diger isimleri:
+    software adress 
+    logical address
+
+-- 2:  alicinin  id si nedir? (mac address)
+--- mac address de fiziksel adres olarak gecer 
+
+--- ip, paketin destination adresine bakar. daha sonra routing table i kullanarak
+-- paketin nereye gönderilecegine karar verir. ve en iyi yolu secer 
+
+-- yani bu iki adrese de sahipsek aga dahil olup diger cihazlar ile haberlesebiliriz 
+
+
+
+
+
+
+
+
+######## ICMP (Internet Control message protocol)
+
+-- bu bir yönetim protokolü ve ip icin mesajlasma servis saglayicisidir
+
+-- belirli kontrol paketleri göndererek karsi taraf online mi offline mi 
+--- yogun mu degil mi bu konuda geri bildirim aliriz
+
+-- mesela ping komutu ile bir server in ayakta olup olmadigini test ediyoruz 
+-- karsi taraf da bize yanit göndererek durumunu bildirir
+
+-- mesela google.com a baglanmaya calisiyoruz. ama baglanma olmuyor server cökmüs. 
+-- iste bu durumda, server dan hemen önceki router bir icmp paket üretir ve bu server a 
+-- ulasilamadigini bildirir 
+
+-- kisaca, icmp network e bagli cihazlarin durumunu sorgulamaya ve raporlamaya yarayan 
+-- bir protokol 
+
+-- ping ve traceroute komutlari icmp protokol kullanir 
+
+
+
+
+
+
+
+#### Address Resolution Protocol: (ARP)
+
+-- pc lerde raouter lar da bir arp tablosu vardir 
+
+-- bu tablo, agdaki ip adresleri ile mac adreslerinin kayitlarini tutar
+
+-- eger agdaki cihazlarin mac adresini biliyor ancak ip adreslerini bilmiyorsak,
+
+-- bu durumda arp broadcast dedigimiz bir broadcast  mesaji göndeririz ve cihazlarin addres lerini isteriz 
+
+-- arp -a komutu ile lokal agimizdaki tüm cihazlarin ip ve mac adreslerini görebiliirz 
+
+-- arp tablosu, tüm layer 2 cihazlarda tutulan ve agdaki cihazlarin mac adresler ile ip adreslerini 
+-- eslestiren bir tablodur
+
+-- aga sürekli cihaz giris cikislari oldugu icin dinamik bir tablodur 
+
+
+
+
+
+
+#### reverse ARP (RARP):
+
+-- burada da kendimize ait mac adresini biliyoruz ancak ip adresimizi bilmiyoruz. Bu durumda mesaj yayinlariz
+-- ve bizim ip adresimizi bilen bir server bize dönüs yapar 
+
+
+
+
+
+
+
+
+## TCP IP ye ait  Transport Layer:
+
+-- hangi protokolü kullanirsak kullanalim, internette üst katmanlardaki tüm veriler, 
+-- tcp yada udp protokol kullanilarak gönderilir 
+
+-- bu iki protokol transport layer daki iki temel protokoldür 
+
+-- TCP:  transmission control protocol 
+
+-- UDP :  user datagram protocol 
+
+-- calisma yöntemleri tamamen farklidir 
+
+
+
+
+
+## TCP:  
+
+-- full dublex dir 
+
+-- connection oriented dir 
+
+-- yani öncelikle gönderici aliciya bir mesaj gönderir. (benim bir mesajim var der )
+
+-- alici "ben hazirim der"
+
+-- gönderen "gönderiyorum der" ve mesajlari gönderir 
+
+-- iste bu isleme treeway habdshake deniyor 
+
+-- treeway handshake den dolayi tcp, bir connected oriented protocol dür 
+
+-- yani karsilikli anlasmadan veri gönderilmez tcp de 
+
+-- göndericinin her paketinden sonra, alici bir acknowledge gönderir 
+
+-- gönderici, alicidan her paketten sonra geri dönüs almadan yeni paketi göndermez 
+
+-- böylece, gönderici paketin gönderildiginden ve paketlerin sira ile gittiginden emin olur 
+
+-- iletisimin ilk asamasindan cevap alinmadigi sürece veri gönderilmez 
+
+-- bu nedenlerle tcp de reliable bir iletisim vardir güvenilir 
+
+-- mesela alici son aldigim paket bozuk derse gönderici bir daha gönderir 
+
+-- eger alici alindi mesaji göndermezse bir süre beklnir mesaj tekrar gönderilir 
+
+-- tüm bu süreclerden dolayi tcp yavastir
+
+-- ve tcp de segment in basina konulan header dosyasi daha büyüktür 
+
+-- bu da paket boyutunu büyütür 
+
+-- zoom gibi youtube gibi yüksek  veri hizi gerektiren ortamlarda tcp protokol yavas kalir.
+-- eger kullanilirsa buralarda ses ve videolar kesik kesik gelir 
+
+-- iste bu sebeplerden dolayi bir de udp protocol ortaya cikmistir 
+
+
+
+
+
+
+### UDP :   (user datagram protocol)
+
+-- burada segmentlerin basindaki header tcp nin ücte biridir 
+
+-- burada alici bir talepte bulunur. daha sonra gönderici mesajlari göndermeye baslar.
+
+-- alici mesajlari almis mi almamis mi, sira ile almis mi bunlar önemli degildir 
+
+-- bu nedenle reliable güvenilir degildir 
+
+-- tcp de wan icerisinde alici ile gönderici arasinda bir tünel olusturulur ve tüm veriler 
+-- bu tünel icerisinden gönderilir 
+
+-- udp de ise wan icerisindeki tüm yollar tüm ihtimaller kullanilir.
+
+-- hiz ise udp kullanilir 
+
+-- güvenlik, , siralama, garanti önemli önemli ise tcp 
+
+
+
+
+######  TCP:                        UDP:
+
+-- secure                       unsecure
+-- connection-oriented          connectionless
+-- slow                         fast
+-- guaranted transmission       no guarentee
+-- flow control                 no flow control (akis kontrol yok tüm paketler ayni anda gider)
+-- reliable                     unreliable
+-- virtual circuit              no virtual circuit 
+-- acknowledge                  no acknowledge
+-- 20 bytes header              8 bytes header 
+
+-- günümüzde tcp suite kullanan tüm cihazlar bu iki protokolü kullanir 
+
+-- biz üst katmanda application yada prozess layer da hangi protokolü kullanirsak kullanalim 
+-- o protokol tarafindan hazirlanan veri, transport layer da tcp yada udp protokol kullanilarak 
+-- karsi tarafa gönderilir 
+
+
+
+
+
+
+
+
+
+### TCP/IP protokolün en üst katmani olan Applicaton layerdaki protokoller:
+
+-- muhakkak her amac icin özellestirilmis bir protokol vardir ve her protokolün bir port numarasi vardir 
+
+-- pc üzerinde arka planda onlarca prozess calisir ama hicbiri birbirine karismaz peki 
+-- her bir app tüm verileri ayni kablo ve internet üzerinden gönderim yapmasin aragmen neden karisiklik olmaz?
+
+-- cünkü herbir prozess kendisine bir port belirler. 2 üzeri 16 yani 65536 tane port vardir ve her bir 
+-- prozess bir tanesini secer ve verilerini oradan gönderir 
+
+-- eger iki ayri sürec ayni portu kullanirsa cakisma olur veri iletimi olmaz 
+
+-- 65536 ader port 3 gruba ayrilmistir. 
+
+-- Birinci grup reserved port lardir. mesela port 80 http portudur 
+
+-- pc de baska hicbir sey bunu kullanamaz. eger bir app yazilimi yaparsak ve buna port 80 i 
+-- kullanma sarti koyarsak bu durumda app calismayacaktir 
+
+-- Ikinci grup: well known port lar.
+
+-- bunlar da belirli app ler tarafindan sik kullanilan port lardir. ancak burada birinci grup gibi 
+-- kullanimimizi engelleyen bir durum yoktur. sadece baska bir app ile ayni port u kullanirsak cakisma olur 
+
+-- 3. grup da digerleri dir 
+
+-- genelde 1 den 1000 e kadar olanlar reserved dür 
+
+-- 1000 - 30000 arasi wel known 
+
+-- Biz bir app gelistirirsek 30.000 ve üzeri kullanmaliyiz 
+
+-- bu durumda cakisma riski azalacaktir 
+
+
+
+
+
+
+
+
+
+
+
+##### FTP (File transfer protokol)
+
+-- burada amac web üzerinde dosya transferi yapmak 
+
+-- mesela www.google.com yaziyoruz. google in ftp sitesi olsa 
+
+-- ftp.google.com yazariz 
+
+-- büyük sirketlerin ftp server i vardir 
+
+-- bunlar genelde privat olur ve giriste kullanici adi ve sifre ister 
+-- public olan ftp server larda vardir 
+
+-- ftp protokol, tcp protokolünü kullanir ve 
+-- port 20 ve 21 fdp protokülüne baglanmis durumda 
+
+-- tüm protokoller ilk ciktiklarinda secure degildi sonradan yeni protokol yapmak yerine 
+-- var olanlar secure hale getirilerek devam edildi
+
+
+--  FTPS :  ftp nin   https gibi secure hali 
+
+-- TFTP:  Trivial ftp 
+-- bu hizlidir cünkü tcp degil udp kullanir 
+
+-- burada fdp kadar islem yok sadece dosya gönderme ve alma yapilir 
+
+-- SFTP : secure FTP 
+
+
+
+
+
+
+
+
+
+
+
+### SSH protokol :
+
+-- Secure Shell protokol, kullaniciya, remote machine de 
+-- komutlari calistirabilmek icin güvenli bir connection olusturulur
+
+-- uzaktaki bir makineye baglanmak icin kullanilir 
+
+-- bit kriptografik protokoldür 
+
+-- bütün communication asimetrik encryption ile kriptolanir 
+
+-- asimetrik bir tane privat bir tane public key demektir 
+
+-- bu key iki taraf da da olmasi lazim. eger bir taraf da olmazsa iletiism kurulamaz
+
+-- mesela awd de olusturulan makinelere ssh kullanilarak baglanilir 
+
+-- tcp port 22 kullanilir. karsi tarafta bu port acik degilse ssh ile baglanamyiz firewall izin vermez
+
+-- ssh bize baska bir pc ye baglanma ve onu yönetme yetkisi verdiginden,
+-- privat cihazlarda genellikler port 2 kapatilmistir 
+
+-- ssh tüm isletim sistemlerinde yüklü olarak gelir 
+
+-- fdp bazilarinda yüklü olarak gelmez 
+
+
+
+
+
+
+
+
+### Telnet: 
+
+-- ssh ile ayni ma´ksatla kullanilir ama kriptolama yok 
+
+-- gönderdigimiz tüm veriler clear text dedigimiz acik text formatinda gider 
+
+-- ssh dan önce kullanilan protokoldü 
+
+-- windows da bunu acmak istesek de güvenli olmadigini söyleyecek ve ssh kullanmamizi tavsiye edecek 
+
+
+
+
+
+
+
+
+
+#### RDP:  (remote desktop protocol)
+
+-- windows, uzaktaki cihazlari kontrol etmek icin gelistirdi 
+
+-- ssh dan farki;
+
+--ssh da tüm islemler terminal kullanilarak yapilir 
+
+-- rdp de ise teamveawer gibi karsi tarafin ekranini görüyoruz ve grafiksel bir arayüz var 
+
+-- karsi tarafa baglaniyoruz onun ekranini kendimize yansitiyoruz ve kendi maus klavyamiz ile 
+-- onun klavye mausunu kullaniyoruz 
+
+
+
+
+
+
+
+
+
+### http:   (hypertext transfer protokol)
+
+-- http port 80 kullanir 
+
+-- https port 443 kullanir 
+
+-- örnek response codes:
+
+-- 200: the request was succesful 
+
+-- 404: page not found
+
+-- https,  TLS yada SSL ile kriptolama yapar 
+
+
+
+
+
+
+##### Email protokolleri:
+
+-- POP (post office protocol)
+
+- IMAP (internet message access protocol)
+
+-- bunlarda email server la haberlesmek icin kullanilir 
+
+-- pop ne icin kullanilir:
+
+-- mesela birden cok domain de email hesabimiz var. pop vasitasi ile 
+-- buradaki email hesaplarimizi alip kendimizdeki tek bir uygulamada 
+-- görüntüleyebiliriz 
+
+-- imap pop a göre daha hizlidir 
+
+
+
+
+
+
+
+### Multimedia Protokols:
+
+-- SIP: Session initiation protocol 
+
+-- RTP: Real-time transport protocol 
+
+-- MGCP: Media gateway control protocol 
+
+-- H.323:  real time video audio ve data information icin bir standard saglar 
+
+
+
+--- Burada bulunan protokoller, günlük hayatta youtube gibi striming hizmetlerinin arka planinda calisir 
+
+
+
+
+
+
+
+### Utility protocols:
+
+-- bizim dogrudan degilde, network administrator larin kullandigi protocollerdir 
+
+-- SNMP:  Simple network management protocol: 
+
+-- bu, networkle ilgili belirli istatistikler tutar. eger bir problem olusmus ise 
+-- network admin önce gelip bu protokolün ciktilarina bakar 
+
+
+
+
+
+
+#### NTP (Network time protokol):
+
+-- veri alis verisi yapabilmek icin cihazlardaki zamanlar senkronize olmak zorundadir.
+
+-- internette ntp server lar vardir. biz internete baglanir baglanmaz, windows, linux yada mac os 
+-- bu ntp serverlara baglanip pc nin zamanini senkronize eder.
+
+-- böylece internetteki tüm pc ler ayni saate sahip olurlar. 
+
+-- isletim sistemimizde, saati otomatik olarak ayarla secenegi kapatildiginda,
+-- bazi applicationlarin calismasinda hata aliriz 
+
+
+
+
+
+
+
+
+##### DHCP: (Dinamic host configuration protokol)
+
+-- agdaki tüm cihazlarin benzersiz ip ve mac adresleri olmasi gerekir demistik.
+
+-- peki bu nasil saglanir. aga bagli pc lerden biri mutlaka dhcp server olarak görev yapar.
+
+-- bizim evimizde bu görevi wifi router yapar. bu cihaz ayni zamanda bir dhcp server dir.
+
+-- biz router a baglandigimiz zaman, bize bir ip adress verir 
+
+-- router evdeki tüm cihazlara tek basina dagittigindan, evdeki tüm ip adresleri benzersizdir 
+
+
+
+
+
+
+
+#### LDAP: (lightweight directory access protocol)
+
+
+
+### TLS / SSL: 
+
+-- internet üzerinde, bir program dizayn ettigimizde bunun bir tls yada ssl sertifikasi olmasi gerekir 
+
+
+
+
+
+
+
+
+
+#### IP Adressing:
+
+-- IP terminoloji: ip adresinin her bir bölümüne octet denir 
+
+-- 1. 2. 3. 4. octet diye ayrilir 
+
+-- octet 8 lik demektir. bir ip adresi 4 byte dan olusur yani 32 bit 
+
+-- yani ip adresi 32 bit, 4 byte, yada 4 octet dir 
+
+-- ip adresi 8 lik, 2 lik veya 16 lik tabanlarda yazilabilir
+
+--- Network address: host addres dir 
+
+-- network id de host id dir 
+
+-- ip adresinin structured bir yapisi var(yani hiyerarsik) lineer degildir böylece routing i mümkün kilar 
+
+-- bir ip adresi, bir network kismindan birde ip host kismindan olusur 
+
+-- bu iki bilgiyi kullanarak biz, istedigimiz paketi istedigimiz kisiye gönderirirz
+
+-- yani, ip adresin ilk yarisi, network adresidir
+
+-- diger yarisi ise, o network icerisindeki host adresidir.
+
+-- dolayisi ile ayni network e ait olan tüm hostlarin ip adresleri ayni network adres ile baslar 
+
+-- ip adresi tasarlayanlar 5 class'a ayirmislardir:
+
+
+
+
+--- class A:  ilk bit'i 0 ile baslar ve sadece ilk octet network ID'yi diger 3 octet host id'yi verir 
+
+-- class B:  10 ile baslar ve ilk 2 octet network id, diger 2 octet host id 
+
+-- class C : 110 ile baslar. ilk 3 octet network id, son octet host id 
+
+-- class d ve e yi cok göremeyiz
+
+
+
+
+### class A:  
+
+-- dünyada 127 tane class A unique network olusturulabilir 
+
+-- 16.777.214 tane de class A da host tanimlanabilir
+
+-- 0000000000 ve 01111111  adresleri kullanilamaz reserved dür 
+
+-- 127 ile baslayan ip adresi lokal hostumuzdur
+
+-- ping komutunda 127 ile baslayan ip adresini yazdigimizda, agda trafik olusturmadan,
+-- kendi pc mizi test edebilirz 
+
+-- yani burada yazdigimiz komut, layer 3 e kadar iner daha asagi ethernet kartina inip 
+-- agda trafik olusturmaz. laer 3 den tekrar yukari cikar 
+
+--- 127 ayni zamanda bizim trounle shooting icin kullandigimiz adres 
+
+-- eger ping ile 127 calistirdigimizda cevap alamiyorsak, pc mizde tcp ip suite kurulumunda 
+-- bir hata vardir. 
+
+-- ip adresi olarak; 0.0.0.0 girersek, dünya üzerinde herhangi bir pc aga baglanabilir demek
+
+-- 255.255.255.255  broadcast to all hosts on the current network 
+
+
+
+
+
+
+
+### class B: 
+
+-- dünyada 16.384 farkli class b ag olusabilir 
+
+-- ve her bir ag icerisinde 2 üzeri 16 farkli host tanimlanabilir 
+
+-- 128 ila 191 arasinda bir sayi ile baslayan bir ip adresi görürsek ,
+
+-- bu class b demektir 
+
+
+
+
+
+
+#### class C: 
+
+-- daha az hosz un oldugu kücük network ler icin tasarlanmis
+
+-- bir ag da en fazla 2 üzeri 8 host tanimlanabilir 
+
+-- normalde 256 tane olur ama tüm class larda 0000000000 ve 1111111111 reserved 
+-- adresler oldugu icin bu ikisini toplam sayidan cikartiriz 
+
+--- 192 ila 223 arasi 
+
+
+
+### class d : 
+
+-- 224 ila 239 arasi ile baslar 
+
+
+
+
+
+## class E:
+
+-- 240 ila 255 arasi 
+
+-- günlük hayatta kullanilmaz 
+
+- test ler icin ayrilmistir 
+
+
+
+##########################################################
+
+A:   1-127   NHHH (Burada N network id H host id)
+
+B:   128-191 NNHH
+
+C:   192-223 NNNH
+
+
+
+--- router lar buradaki H kismi ile hic ilgilenmezler. sadece N kismina bakarak paketin hangi 
+-- network e ait oldugunu anlarlar
+
+
+
+
+
+
+
+
+######## privat ip address:
+
+
+-- ipv4 günümüzde ihtiyaclari karsilamiyor yeterince ip adres yok 
+
+-- bu nedenle söyle bir cözüm bulunmustur:
+
+-- farkli farkli lokal aglarda bulunan ve cakisma ihtimali olmayan
+-- cihazlara ayni ip adresi verilerek bunlara privat ip adres denilmistir.
+
+-- internete public ip ile cikis yapildigi icin, privat lar sadece lokaller de kullanilir ve 
+-- cakisma ihtimaller iyoktur 
+
+-- google da what is my ip yazarsak, kendi internete cikis yaptigimiz
+-- public ip mizi görürüz 
+
+-- privat ip miz ise bundan farklidir 
+
+-- privat ip olarak reserve edilmis olanlar:
+
+class A:  10.0.0.0 to 10.255.255.255 
+
+class B: 172.16.0.0 to 172.31.255.255
+
+class C: 192.168.0.0 to 192.168.255.255
+
+
+
+
+
+
+
+
+##### NAT :  (Network address translation)
+
+--  lokalimizde, ip adresimiz var, ve biz internete cikis yapmak istiyoruz.
+
+-- iste burada nat cihazlari devreye girer.
+
+-- bu cihaz lokaldeki privat ip adresini alir, NAT table da bir public ip adresi ile eslestirir 
+
+-- internete bu public ip adresi ile cikis yapar 
+
+-- yani network adresimizi translate eder
+
+
+
+-- Not: ISP (internet service provider)
+
+
+
+##### types of NAT:
+
+-- Overloading or Port Address Translation: (PAT)
+
+-- bu en yaygin olan NAT türüdür
+
+-- Bu sistemde ortada pat olarak ayarlanmis bir NAT cihazi var 
+
+-- bu, privat ip adresinin karsisina bir port numarasi atar.
+
+-- böylece farkli pc ler ayni public ip adresini kulanarak internete cikis yapabilir. cünkü 
+-- hepsine ayrilacak kadar port numaralari var 
+
+--  yani privat ip adresinin arkasina bir port numarasi eklenir ve 
+-- bu numara ile internete talep gider. gelen cevap yine port numarasi ile gelir. ve 
+-- NAT table gelen cevabi bizim privat ip adresimize cevirerek cevabi bize iletir 
+
+-- evimizde bu islemi wifi router lar yapar 
+
+- wifi router lar, hem modem, hem DHCP server hem de NAT cihazidir 
+
+-- biz evimizdeki hangi cihazdan, google da ip adresimizi sorgularsak
+-- hepsinde ayni cevai aliriz, cünkü ISP bize bu ip adresini vermistir
+
+-- peki gelen veri evimizdeki hangi cihaza geldi ?
+
+-- bunun ayrimini da iste, port numaralarindan ayirim yaparak PAT cihazi 
+-- vazifesi gören wifi router yapar 
+
+-- disarida telefonla internete baglandigimizda ise, operatörümüzün baz istasyonunda 
+-- bir NAT cihazi vardir. bu cihaz üzerinden internete cikis yapariz 
+
+
+
+
+--- eger bir yerde sadece IP görüyorsak bu ipv4 anlamina gelir (yani 32 bitliktir)
+
+-- ipv6 kullaniyorsak acik acik söylemek zorundayiz
+
+-- layer 2 de mac adresi olarak FF:FF:FF:FF:FF yazarsak bu bir broadcast mesajdir agdaki tüm cihazlara gider  
+
+-- layer 3 de ise X.255.255.255 broadcast olarak kullanilir 
+
+
+
+
+
+### Unicast address:
+
+-- agdaki unique bir cihazi tanimlar 
+
+-- burada bir alici bir de gönderici adresi var. kisinin specifik adresini yazip 
+-- gönderiyoruz bu bir unicast mesaj oluyor 
+
+
+
+
+
+
+
+##### IPv6:
+
+-- avantajlari:
+
+-- More efficient routing (yani encapsulation ve deencapsulation gibi sürecler daha hizli )
+
+-- more efficient packet processing
+
+-- directed data flows (No broadcasts)  (broadcast olmamasi hizi artiriyor)
+-- burada broadcast e benzer anycast diye bir mesaj var 
+
+-- simplified network configuration (public ve privat diye bir ayrim yok )
+-- bu nedenle configuration daha kolay 
+
+-- böyle bir ayrim olmadigi icin artik NAT cihazlara ihtiyacimiz yok .
+-- ipv6 e gectigimizde evimizdeki her cihaza ait bir public ip adresimiz olacak 
+
+-- ipv6 dogrudan ip security dedigimiz bir kavrami destekledigi icin ipv4 e göre daha güvenli 
+
+-- ipv4 genel de 10 luk sistemde gösterilir ve her bir bölüme octet denir 
+
+-- ipv6 ise 16 lik sistemde gösterilir ve her bir bölüme 
+-- hexadectet yada hextet denir 
+
+-- ipv4 de 10 luk sistemdeki ip adresi browser a yazilarak web sitesine baglanabilirz
+
+-- ama ipv6 de ip adresini muhakkak [] icerisine yazmamiz gerekir 
+
+-- ipv6 de ip adresi cok uzun oldugu icin kisaltmanin bir kurali vardir .
+
+-- tekrar eden sifirlari sadece bir kereye mahsus olarak kaldirabilirz 
+
+
+
+--- anycast: broadcast de herkese gönderilir, anycast de ise sadece komsularimiza göndeririz 
+
+--- en yakinimizdaki cihazlara gider 
+
+-- 0:0:0:0:0:0:0:0  bu ipv6 de herhangi bir pc demektir 
+
+-- 0:0:0:0:0:0:0:1  bu ise lokal pc demektir  ipv4 deki 127.0.0.1 ile aynidir 
+
+
+
+
+-- ipv6 de paket header lari daha kücük oldugu icin ve broadcast olmadigi icin 
+-- daha hizlidir 
+
+- 
