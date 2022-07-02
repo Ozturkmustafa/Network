@@ -13,7 +13,6 @@
 
 
 
-
 -- 1. ve 2. katmanin standartlari Ethernet dökümani ile belrlenmistir
 
 -- 2. katmandaki en önemli cihaz ethernet kartidir 
