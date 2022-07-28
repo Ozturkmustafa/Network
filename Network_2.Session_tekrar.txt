@@ -48,7 +48,6 @@
 -- CAT7 fiber kablo kategorisidir.
 -- mesela bizim kapidan evdeki modeme kadar cektigimiz kablo 
 
-
 -- ethernet kablosu icinde 8 adet ince kablo vardir.
 - Bunlar ikili ikili birbiri ile bükülmüstür.
 -- Bu nedenle twisted pair denir 
