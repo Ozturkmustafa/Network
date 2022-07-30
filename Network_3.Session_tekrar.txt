@@ -11,8 +11,6 @@
 -- WAN da IP adresleri (yani aga baglanan her cihazin 1 mac bir de IP adresi olmasi gerekir) 
 
 
-
-
 -- 1. ve 2. katmanin standartlari Ethernet dökümani ile belrlenmistir
 
 -- 2. katmandaki en önemli cihaz ethernet kartidir 
@@ -24,14 +22,9 @@
 
 
 
-
-
-
 -- 3. katmandaki en önemli cihaz router
 
 -- su an IP version 4 kullanilir 32 bittir
-
-
 
 
 
